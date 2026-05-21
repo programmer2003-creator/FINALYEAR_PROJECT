@@ -1,0 +1,133 @@
+Year,Month_Name,Petrol Price(Tsh/litre),NOTE
+2015,January,1965,Global oil price decline
+2015,February,1932,Global oil price decline
+2015,March,2002,Global oil price decline
+2015,April,2065,Global oil price decline
+2015,May,1906,Global oil price decline
+2015,June,1881,Global oil price decline
+2015,July,2001,Global oil price decline
+2015,August,1918,Global oil price decline
+2015,September,1812,Global oil price decline
+2015,October,1900,Global oil price decline
+2015,November,1838,Global oil price decline
+2015,December,1863,Global oil price decline
+2016,January,2094,Global oil price decline
+2016,February,1940,Global oil price decline
+2016,March,1962,Global oil price decline
+2016,April,2048,Global oil price decline
+2016,May,1994,Global oil price decline
+2016,June,2075,Global oil price decline
+2016,July,1952,Global oil price decline
+2016,August,1894,Global oil price decline
+2016,September,2117,Global oil price decline
+2016,October,1989,Global oil price decline
+2016,November,2030,Global oil price decline
+2016,December,1936,Global oil price decline
+2017,January,2331,Gradual market recovery
+2017,February,2402,Gradual market recovery
+2017,March,2308,Gradual market recovery
+2017,April,2423,Gradual market recovery
+2017,May,2327,Gradual market recovery
+2017,June,2327,Gradual market recovery
+2017,July,2277,Gradual market recovery
+2017,August,2455,Gradual market recovery
+2017,September,2299,Gradual market recovery
+2017,October,2222,Gradual market recovery
+2017,November,2391,Gradual market recovery
+2017,December,2252,Gradual market recovery
+2018,January,2692,Rising global oil prices
+2018,February,2537,Rising global oil prices
+2018,March,2594,Rising global oil prices
+2018,April,2709,Rising global oil prices
+2018,May,2734,"OPEC production cuts, increased demand"
+2018,June,2664,"OPEC production cuts, increased demand"
+2018,July,2616,"OPEC production cuts, increased demand"
+2018,August,2583,Rising global oil prices
+2018,September,2482,Rising global oil prices
+2018,October,2549,Rising global oil prices
+2018,November,2588,Rising global oil prices
+2018,December,2735,Rising global oil prices
+2019,January,2802,Stable market conditions
+2019,February,2652,Stable market conditions
+2019,March,2826,Stable market conditions
+2019,April,2762,Stable market conditions
+2019,May,2721,Stable market conditions
+2019,June,2799,Stable market conditions
+2019,July,2807,Stable market conditions
+2019,August,2781,Stable market conditions
+2019,September,2633,Stable market conditions
+2019,October,2682,Stable market conditions
+2019,November,2752,Stable market conditions
+2019,December,2828,Stable market conditions
+2020,January,2837,Pre-pandemic stability
+2020,February,2878,Pre-pandemic stability
+2020,March,2811,Pre-pandemic stability
+2020,April,2398,"COVID-19 pandemic, demand collapse"
+2020,May,2540,"COVID-19 pandemic, demand collapse"
+2020,June,2559,"COVID-19 pandemic, demand collapse"
+2020,July,2619,Pandemic recovery begins
+2020,August,2687,Pandemic recovery begins
+2020,September,2629,Pandemic recovery begins
+2020,October,2555,Pandemic recovery begins
+2020,November,2654,Pandemic recovery begins
+2020,December,2773,Pandemic recovery begins
+2021,January,3222,"Post-pandemic recovery, supply chain issues"
+2021,February,3368,"Post-pandemic recovery, supply chain issues"
+2021,March,3040,"Post-pandemic recovery, supply chain issues"
+2021,April,3309,"Post-pandemic recovery, supply chain issues"
+2021,May,3232,"Post-pandemic recovery, supply chain issues"
+2021,June,3176,"Post-pandemic recovery, supply chain issues"
+2021,July,3182,"Post-pandemic recovery, supply chain issues"
+2021,August,2998,"Post-pandemic recovery, supply chain issues"
+2021,September,3132,"Post-pandemic recovery, supply chain issues"
+2021,October,3185,"Post-pandemic recovery, supply chain issues"
+2021,November,3293,"Post-pandemic recovery, supply chain issues"
+2021,December,3159,"Post-pandemic recovery, supply chain issues"
+2022,January,2500,Inflation pressures
+2022,February,2480,Inflation pressures
+2022,March,2861,"Russia-Ukraine war impact, global supply disruption"
+2022,April,2905,"Russia-Ukraine war impact, global supply disruption"
+2022,May,3148,"Russia-Ukraine war impact, global supply disruption"
+2022,June,3301,"Russia-Ukraine war impact, global supply disruption"
+2022,July,3533,"Russia-Ukraine war impact, global supply disruption"
+2022,August,3584,"Russia-Ukraine war impact, global supply disruption"
+2022,September,3444,"Russia-Ukraine war impact, global supply disruption"
+2022,October,3480,"Russia-Ukraine war impact, global supply disruption"
+2022,November,3494,"Russia-Ukraine war impact, global supply disruption"
+2022,December,3433,"Russia-Ukraine war impact, global supply disruption"
+2023,January,3303,Continued geopolitical tensions
+2023,February,3264,Continued geopolitical tensions
+2023,March,3021,Continued geopolitical tensions
+2023,April,2803,Continued geopolitical tensions
+2023,May,2871,Continued geopolitical tensions
+2023,June,3566,Continued geopolitical tensions
+2023,July,3548,Market stabilization efforts
+2023,August,3493,Market stabilization efforts
+2023,September,3537,Market stabilization efforts
+2023,October,3589,Market stabilization efforts
+2023,November,3726,Market stabilization efforts
+2023,December,3614,Market stabilization efforts
+2024,January,3084,Currency fluctuations
+2024,February,3051,Currency fluctuations
+2024,March,3209,Currency fluctuations
+2024,April,3303,Currency fluctuations
+2024,May,3360,Currency fluctuations
+2024,June,3263,Currency fluctuations
+2024,July,3210,Seasonal demand variations
+2024,August,3231,Seasonal demand variations
+2024,September,3140,Seasonal demand variations
+2024,October,3011,Seasonal demand variations
+2024,November,2943,Seasonal demand variations
+2024,December,2898,Seasonal demand variations
+2025,January,2793,local tax policies
+2025,February,2820,local tax policies
+2025,March,2996,local tax policies
+2025,April,3037,local tax policies
+2025,May,2947, local tax policies
+2025,June,2885,local tax policies
+2025,July,2969,local tax policies
+2025,August,2904,local tax policies
+2025,September,2752, local tax policies
+2025,October,2844,local tax policies
+2025,November,2813,local tax policies
+2025,December,2749, local tax policies

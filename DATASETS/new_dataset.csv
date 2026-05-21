@@ -1,0 +1,193 @@
+date,price,exchange rate (1 USD TO TZS),observation
+1/1/2010,1533.9349 ,1313.0056 ,baseline / no prior month
+2/1/2010,1620.3256 ,1323.5843 ,normal month-over-month move
+3/1/2010,1572.1865 ,1326.3845 ,normal month-over-month move
+4/1/2010,1681.5984 ,1330.0796 ,normal month-over-month move
+5/1/2010,1711.4398 ,1343.2834 ,normal month-over-month move
+6/1/2010,1682.5732 ,1375.3842 ,normal month-over-month move
+7/1/2010,2243.5843 ,1379.3845 ,normal month-over-month move
+8/1/2010,1883.7230 ,1382.3458 ,normal month-over-month move
+9/1/2010,1863.6843 ,1470.3745 ,normal month-over-month move
+10/1/2010,1706.9504 ,1483.7382 ,normal month-over-month move
+11/1/2010,2144.2460 ,1482.4832 ,normal month-over-month move
+12/1/2010,2330.4396 ,1470.2934 ,normal month-over-month move
+1/1/2011,2885.6954 ,1453.5843 ,normal month-over-month move
+2/1/2011,2327.0897 ,1483.8432 ,normal month-over-month move
+3/1/2011,2292.3492 ,1500.9970 ,normal month-over-month move
+4/1/2011,2532.8943 ,1490.2834 ,normal month-over-month move
+5/1/2011,2397.3965 ,1497.3842 ,normal month-over-month move
+6/1/2011,2265.7953 ,1518.0392 ,normal month-over-month move
+7/1/2011,2129.7832 ,1579.5943 ,normal month-over-month move
+8/1/2011,2063.3329 ,1569.0394 ,normal month-over-month move
+9/1/2011,2067.3621 ,1604.2831 ,normal month-over-month move
+10/1/2011,2029.4280 ,1631.0493 ,normal month-over-month move
+11/1/2011,2032.6821 ,1646.1913 ,normal month-over-month move
+12/1/2011,1936.2741 ,1655.0432 ,normal month-over-month move
+1/1/2012,1956.4953 ,1566.3394 ,normal month-over-month move
+2/1/2012,1991.5843 ,1575.9554 ,normal month-over-month move
+3/1/2012,2144.6832 ,1573.0256 ,normal month-over-month move
+4/1/2012,2231.4820 ,1575.9954 ,normal month-over-month move
+5/1/2012,2183.4822 ,1568.1193 ,normal month-over-month move
+6/1/2012,2189.8439 ,1570.1023 ,normal month-over-month move
+7/1/2012,2179.6979 ,1568.2348 ,normal month-over-month move
+8/1/2012,2009.1007 ,1574.0029 ,normal month-over-month move
+9/1/2012,2300.3945 ,1567.5043 ,normal month-over-month move
+10/1/2012,1994.6854 ,1569.1045 ,normal month-over-month move
+11/1/2012,2049.8976 ,1571.0059 ,normal month-over-month move
+12/1/2012,2119.6854 ,1571.3410 ,normal month-over-month move
+1/1/2013,1919.1007 ,1571.6054 ,normal month-over-month move
+2/1/2013,2004.3742 ,1584.0059 ,normal month-over-month move
+3/1/2013,2052.6875 ,1587.3338 ,normal month-over-month move
+4/1/2013,2078.3848 ,1590.0392 ,normal month-over-month move
+5/1/2013,2073.3845 ,1591.2934 ,normal month-over-month move
+6/1/2013,2057.3945 ,1599.0034 ,normal month-over-month move
+7/1/2013,2070.3844 ,1605.4320 ,normal month-over-month move
+8/1/2013,2083.5843 ,1613.2834 ,normal month-over-month move
+9/1/2013,2096.2934 ,1611.0034 ,normal month-over-month move
+10/1/2013,2108.3845 ,1601.5843 ,normal month-over-month move
+11/1/2013,2122.3845 ,1601.9965 ,normal month-over-month move
+12/1/2013,2135.2834 ,1607.3923 ,normal month-over-month move
+1/1/2014,2148.6854 ,1574.2734 ,normal month-over-month move
+2/1/2014,2161.2834 ,1614.3842 ,normal month-over-month move
+3/1/2014,2174.3945 ,1620.0445 ,normal month-over-month move
+4/1/2014,2187.3892 ,1630.0493 ,normal month-over-month move
+5/1/2014,2201.0054 ,1633.5991 ,normal month-over-month move
+6/1/2014,2215.9976 ,1645.3066 ,normal month-over-month move
+7/1/2014,2228.7854 ,1650.0005 ,normal month-over-month move
+8/1/2014,2266.2935 ,1654.4953 ,normal month-over-month move
+9/1/2014,2267.7854 ,1660.0931 ,normal month-over-month move
+10/1/2014,2192.4732 ,1666.0493 ,normal month-over-month move
+11/1/2014,2178.2734 ,1683.0695 ,normal month-over-month move
+12/1/2014,2029.7958 ,1731.9455 ,normal month-over-month move
+1/1/2015,1955.5320 ,1725.1045 ,Global oil price decline
+2/1/2015,1768.5732 ,1745.7942 ,Global oil price decline
+3/1/2015,1652.6753 ,1791.2034 ,Global oil price decline
+4/1/2015,1755.4832 ,1789.0448 ,Global oil price decline
+5/1/2015,1866.4832 ,1829.4851 ,Global oil price decline
+6/1/2015,1966.5843 ,1997.0348 ,Global oil price decline
+7/1/2015,2198.5843 ,1974.3481 ,Global oil price decline
+8/1/2015,2170.4732 ,2088.3944 ,Global oil price decline
+9/1/2015,2142.7430 ,2136.0566 ,Global oil price decline
+10/1/2015,2116.7968 ,2149.2340 ,Global oil price decline
+11/1/2015,2089.2735 ,2159.2304 ,Global oil price decline
+12/1/2015,2063.2347 ,2149.4953 ,Global oil price decline
+1/1/2016,2036.9685 ,2148.5690 ,Global oil price decline
+2/1/2016,2010.6843 ,2176.2934 ,Global oil price decline
+3/1/2016,1986.4823 ,2179.0045 ,Global oil price decline
+4/1/2016,1961.4823 ,2177.5832 ,Global oil price decline
+5/1/2016,1936.8347 ,2180.0045 ,Global oil price decline
+6/1/2016,1912.5532 ,2182.0795 ,Global oil price decline
+7/1/2016,1888.3742 ,2178.5584 ,Global oil price decline
+8/1/2016,1905.1938 ,2179.1023 ,Global oil price decline
+9/1/2016,1840.6954 ,2176.5574 ,Global oil price decline
+10/1/2016,1827.6975 ,2172.3384 ,Global oil price decline
+11/1/2016,1860.2934 ,2175.5587 ,Global oil price decline
+12/1/2016,1890.5843 ,2170.9450 ,Global oil price decline
+1/1/2017,1890.1234 ,2175.2234 ,Gradual market recovery
+2/1/2017,1959.6854 ,2221.5594 ,Gradual market recovery
+3/1/2017,2060.2835 ,2226.3845 ,Gradual market recovery
+4/1/2017,2057.5843 ,2223.3384 ,Gradual market recovery
+5/1/2017,2027.2934 ,2227.2834 ,Gradual market recovery
+6/1/2017,2052.4653 ,2229.0965 ,Gradual market recovery
+7/1/2017,2106.2834 ,2230.2834 ,Gradual market recovery
+8/1/2017,2163.0723 ,2231.0069 ,Gradual market recovery
+9/1/2017,2222.2348 ,2234.4932 ,Gradual market recovery
+10/1/2017,2246.1247 ,2237.6870 ,Gradual market recovery
+11/1/2017,2270.2834 ,2237.4843 ,Gradual market recovery
+12/1/2017,2293.8342 ,2233.2834 ,Gradual market recovery
+1/1/2018,2318.4832 ,2230.0067 ,Rising global oil prices
+2/1/2018,2307.0695 ,2239.9567 ,Rising global oil prices
+3/1/2018,2297.3823 ,2244.6954 ,Rising global oil prices
+4/1/2018,2286.3920 ,2249.3842 ,Rising global oil prices
+5/1/2018,2326.4833 ,2262.0965 ,"OPEC production cuts, increased demand"
+6/1/2018,2368.4820 ,2265.9554 ,"OPEC production cuts, increased demand"
+7/1/2018,2409.2283 ,2266.2834 ,"OPEC production cuts, increased demand"
+8/1/2018,2384.6854 ,2272.3945 ,Rising global oil prices
+9/1/2018,2373.3486 ,2274.0069 ,Rising global oil prices
+10/1/2018,2368.6854 ,2277.2294 ,Rising global oil prices
+11/1/2018,2396.6848 ,2279.9458 ,Rising global oil prices
+12/1/2018,2436.1020 ,2278.6954 ,Rising global oil prices
+1/1/2019,2295.0450 ,2281.5071 ,Stable market conditions
+2/1/2019,2120.5820 ,2283.2293 ,Stable market conditions
+3/1/2019,2098.5720 ,2288.9650 ,Stable market conditions
+4/1/2019,2147.4539 ,2289.4459 ,Stable market conditions
+5/1/2019,2233.3920 ,2289.3596 ,Stable market conditions
+6/1/2019,2353.5438 ,2289.8540 ,Stable market conditions
+7/1/2019,2312.5482 ,2289.2934 ,Stable market conditions
+8/1/2019,2153.4483 ,2289.2934 ,Stable market conditions
+9/1/2019,2236.2355 ,2289.2834 ,Stable market conditions
+10/1/2019,2094.5473 ,2289.3945 ,Stable market conditions
+11/1/2019,2192.4820 ,2289.2834 ,Stable market conditions
+12/1/2019,2161.2930 ,2288.9806 ,Stable market conditions
+1/1/2020,2206.5483 ,2288.4953 ,Pre-pandemic stability
+2/1/2020,2226.8320 ,2289.2834 ,Pre-pandemic stability
+3/1/2020,2204.6584 ,2289.0234 ,Pre-pandemic stability
+4/1/2020,2087.0392 ,2289.0394 ,"COVID-19 pandemic, demand collapse"
+5/1/2020,1868.4583 ,2291.6794 ,"COVID-19 pandemic, demand collapse"
+6/1/2020,1520.9322 ,2291.9122 ,"COVID-19 pandemic, demand collapse"
+7/1/2020,1693.3956 ,2297.4853 ,Pandemic recovery begins
+8/1/2020,1832.4732 ,2297.3891 ,Pandemic recovery begins
+9/1/2020,1852.4832 ,2297.6970 ,Pandemic recovery begins
+10/1/2020,1877.5970 ,2297.5864 ,Pandemic recovery begins
+11/1/2020,1902.6748 ,2297.3842 ,Pandemic recovery begins
+12/1/2020,1865.2224 ,2297.3429 ,Pandemic recovery begins
+1/1/2021,1834.4828 ,2298.0069 ,"Post-pandemic recovery, supply chain issues"
+2/1/2021,1887.2394 ,2298.6951 ,"Post-pandemic recovery, supply chain issues"
+3/1/2021,1981.9540 ,2298.4831 ,"Post-pandemic recovery, supply chain issues"
+4/1/2021,2123.4032 ,2298.1906 ,"Post-pandemic recovery, supply chain issues"
+5/1/2021,2169.6728 ,2298.0068 ,"Post-pandemic recovery, supply chain issues"
+6/1/2021,2249.5820 ,2298.9965 ,"Post-pandemic recovery, supply chain issues"
+7/1/2021,2405.5683 ,2299.5832 ,"Post-pandemic recovery, supply chain issues"
+8/1/2021,2427.2370 ,2299.1854 ,"Post-pandemic recovery, supply chain issues"
+9/1/2021,2427.5694 ,2299.8320 ,"Post-pandemic recovery, supply chain issues"
+10/1/2021,2439.3940 ,2297.7733 ,"Post-pandemic recovery, supply chain issues"
+11/1/2021,2439.9387 ,2293.7548 ,"Post-pandemic recovery, supply chain issues"
+12/1/2021,2510.3720 ,2293.3842 ,"Post-pandemic recovery, supply chain issues"
+1/1/2022,2501.5820 ,2297.8965 ,Inflation pressures
+2/1/2022,2481.6589 ,2298.3842 ,Inflation pressures
+3/1/2022,2541.0394 ,2298.5843 ,"Russia-Ukraine war impact, global supply disruption"
+4/1/2022,2862.3845 ,2298.4842 ,"Russia-Ukraine war impact, global supply disruption"
+5/1/2022,3149.8440 ,2298.4832 ,"Russia-Ukraine war impact, global supply disruption"
+6/1/2022,2994.3764 ,2300.1004 ,"Russia-Ukraine war impact, global supply disruption"
+7/1/2022,3220.1287 ,2304.6520 ,"Russia-Ukraine war impact, global supply disruption"
+8/1/2022,3410.6954 ,2304.2835 ,"Russia-Ukraine war impact, global supply disruption"
+9/1/2022,2969.5372 ,2305.2340 ,"Russia-Ukraine war impact, global supply disruption"
+10/1/2022,2886.6732 ,2307.8950 ,"Russia-Ukraine war impact, global supply disruption"
+11/1/2022,2886.4632 ,2308.3845 ,"Russia-Ukraine war impact, global supply disruption"
+12/1/2022,3247.4983 ,2308.5864 ,"Russia-Ukraine war impact, global supply disruption"
+1/1/2023,2819.0076 ,2308.9129 ,Continued geopolitical tensions
+2/1/2023,2819.8432 ,2309.3606 ,Continued geopolitical tensions
+3/1/2023,2968.1275 ,2309.9079 ,Continued geopolitical tensions
+4/1/2023,2781.4738 ,2311.4403 ,Continued geopolitical tensions
+5/1/2023,2871.1865 ,2313.5697 ,Continued geopolitical tensions
+6/1/2023,2873.9565 ,2319.5101 ,Continued geopolitical tensions
+7/1/2023,2736.8975 ,2328.4656 ,Market stabilization efforts
+8/1/2023,3199.6832 ,2383.1436 ,Market stabilization efforts
+9/1/2023,3213.4892 ,2443.8217 ,Market stabilization efforts
+10/1/2023,3281.8900 ,2481.7629 ,Market stabilization efforts
+11/1/2023,3274.5832 ,2481.9818 ,Market stabilization efforts
+12/1/2023,3158.5830 ,2509.1865 ,Market stabilization efforts
+1/1/2024,3084.9403 ,2501.4450 ,Currency fluctuations
+2/1/2024,3052.5921 ,2516.4802 ,Currency fluctuations
+3/1/2024,3164.6589 ,2544.1326 ,Currency fluctuations
+4/1/2024,3258.5823 ,2560.2922 ,Currency fluctuations
+5/1/2024,3315.5783 ,2573.2577 ,Currency fluctuations
+6/1/2024,3262.7590 ,2599.1290 ,Currency fluctuations
+7/1/2024,3211.5500 ,2630.2641 ,Seasonal demand variations
+8/1/2024,3232.9654 ,2668.7228 ,Seasonal demand variations
+9/1/2024,3141.0584 ,2684.2356 ,Seasonal demand variations
+10/1/2024,3012.4893 ,2716.4851 ,Seasonal demand variations
+11/1/2024,2944.0877 ,2681.3500 ,Seasonal demand variations
+12/1/2024,2899.8784 ,2621.9057 ,Seasonal demand variations
+1/1/2025,2794.5765 ,2374.7453 ,local tax policies
+2/1/2025,2821.4636 ,2486.2008 ,local tax policies
+3/1/2025,2997.6854 ,2588.5516 ,local tax policies
+4/1/2025,3038.2344 ,2657.0110 ,local tax policies
+5/1/2025,2948.8900 ,2678.6733 , local tax policies
+6/1/2025,2886.0768 ,2684.0764 ,local tax policies
+7/1/2025,2878.5436 ,2604.5520 ,local tax policies
+8/1/2025,2844.1235 ,2542.6102 ,local tax policies
+9/1/2025,2808.5854 ,2463.2849 , local tax policies
+10/1/2025,2753.9215 ,2441.4037 ,local tax policies
+11/1/2025,2753.2370 ,2451.6428 ,local tax policies
+12/1/2025,2748.5743 ,2436.7966 , local tax policies
