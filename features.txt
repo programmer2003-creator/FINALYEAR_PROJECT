@@ -1,0 +1,11 @@
+FEATURE TO INCLUDE IN MY WEB APP
+- Prediction service
+- visualized data 
+- important calculated data (highest price per year, avarage price per year)
+- calculate fuel amount which will be used per route (provided that the route km is known)
+- calculate cost per route
+- engagement according to user persona (petrol station operator, logistics operator)
+- read current real price
+- calculate distance in km from tanzanian map between one point to another
+- user can set from and to destination points
+- get real time currency exchange form usd to tzs
