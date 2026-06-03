@@ -1,0 +1,8 @@
+{
+    "interval_width": 0.95,
+    "yearly_seasonality": true,
+    "weekly_seasonality": false,
+    "daily_seasonality": false,
+    "training_rows": 192,
+    "last_date": "2025-12-01 00:00:00"
+}
