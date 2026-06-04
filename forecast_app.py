@@ -2,12 +2,12 @@
 Streamlit app to load the saved Prophet model and make predictions
 """
 import streamlit as st
-import pickle
 import pandas as pd
 import json
 import os
 from datetime import datetime, timedelta
 import plotly.graph_objects as go
+from prophet import Prophet
 
 st.set_page_config(page_title="Sales Forecasting", layout="wide")
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
@@ -15,17 +15,31 @@ st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allo
 st.title("Petroleum Price Forecasting Dashboard")
 
 # Check if model exists
-if not os.path.exists('prophet_model.pkl'):
+if not os.path.exists('prophet_model.json'):
     st.error("Model not found! Please run `save_prophet_model.py` first.")
     st.stop()
 
 # Load model and metadata
 @st.cache_resource
 def load_model():
-    with open('prophet_model.pkl', 'rb') as f:
-        model = pickle.load(f)
+    with open('prophet_model.json', 'r') as f:
+        model_data = json.load(f)
+    
     with open('model_metadata.json', 'r') as f:
         metadata = json.load(f)
+    
+    # Reconstruct the Prophet model from JSON data
+    training_data = pd.DataFrame(model_data['training_data'])
+    training_data['ds'] = pd.to_datetime(training_data['ds'])
+    
+    model = Prophet(
+        interval_width=model_data['params']['interval_width'],
+        yearly_seasonality=model_data['params']['yearly_seasonality'],
+        weekly_seasonality=model_data['params']['weekly_seasonality'],
+        daily_seasonality=model_data['params']['daily_seasonality']
+    )
+    model.fit(training_data)
+    
     return model, metadata
 
 model, metadata = load_model()

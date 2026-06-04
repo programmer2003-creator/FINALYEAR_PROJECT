@@ -1,8 +1,7 @@
 """
-Script to save the trained Prophet model
+Script to save the trained Prophet model to JSON format
 Run this ONCE after training your model in model.ipynb
 """
-import pickle
 import json
 import pandas as pd
 from prophet import Prophet
@@ -24,9 +23,20 @@ model = Prophet(
 print("Training Prophet model...")
 model.fit(prophet_df)
 
-# Save the trained model
+# Save the trained model to JSON format
 print("Saving model...")
-pickle.dump(model, open('prophet_model.pkl', 'wb'))
+model_data = {
+    'params': {
+        'interval_width': 0.95,
+        'yearly_seasonality': True,
+        'weekly_seasonality': False,
+        'daily_seasonality': False,
+    },
+    'training_data': prophet_df.to_dict(orient='records'),
+}
+
+with open('prophet_model.json', 'w') as f:
+    json.dump(model_data, f, indent=4, default=str)
 
 # Save metadata
 metadata = {
@@ -37,7 +47,9 @@ metadata = {
     'training_rows': len(prophet_df),
     'last_date': str(prophet_df['ds'].max())
 }
-json.dump(metadata, open('model_metadata.json', 'w'), indent=4)
 
-print("✓ Model saved as 'prophet_model.pkl'")
+with open('model_metadata.json', 'w') as f:
+    json.dump(metadata, f, indent=4)
+
+print("✓ Model saved as 'prophet_model.json'")
 print("✓ Metadata saved as 'model_metadata.json'")
