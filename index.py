@@ -172,16 +172,7 @@ def sidebar_nav():
     st.sidebar.markdown("---")
     if DB_OK:
         st.sidebar.success("DB: connected")
-        # show reflected columns for debugging/verification (one-line each)
-        try:
-            if users_table is not None:
-                cols_users = ", ".join([c.name for c in users_table.columns])
-                st.sidebar.caption(f"users columns: {cols_users}")
-            if logs_table is not None:
-                cols_logs = ", ".join([c.name for c in logs_table.columns])
-                st.sidebar.caption(f"logs columns: {cols_logs}")
-        except Exception:
-            pass
+       
     else:
         st.sidebar.error("DB: connection failed")
         st.sidebar.caption(DB_ERROR)
@@ -232,6 +223,7 @@ def register_page():
         password = st.text_input("Password", type="password")
         password_confirm = st.text_input("Confirm Password", type="password")
         submitted = st.form_submit_button("Create account")
+
         if submitted:
             errors = []
             if not username or len(username) < 3:
@@ -248,36 +240,40 @@ def register_page():
                 for e in errors:
                     st.error(e)
             else:
+                # Normalize email
+                email_norm = email.strip().lower()
+
                 db = SessionLocal()
                 try:
                     # Check existing user/email
                     existing_user = db.query(User).filter_by(username=username).first()
-                    existing_email = db.query(User).filter_by(email=email).first()
+                    existing_email = db.query(User).filter_by(email=email_norm).first()
                     if existing_user:
                         st.error("Username already exists")
                     elif existing_email:
                         st.error("Email already registered")
                     else:
-                        # Hash password with bcrypt
-                        hashed = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt()).decode("utf-8")
+                        # Hash password with bcrypt (create bytes then decode to str)
+                        hashed_bytes = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
+                        hashed = hashed_bytes.decode("utf-8")  # e.g. "$2b$12$..."
+
                         new_user = User()
-                        # assign attributes safely based on reflected columns
-                        # username and email are expected to exist
+                        # assign username
                         if hasattr(new_user, 'username'):
                             setattr(new_user, 'username', username)
                         else:
-                            # try alternative column names
                             for cand in ('user_name', 'user', 'uname'):
                                 if hasattr(new_user, cand):
                                     setattr(new_user, cand, username)
                                     break
 
+                        # assign email
                         if hasattr(new_user, 'email'):
-                            setattr(new_user, 'email', email)
+                            setattr(new_user, 'email', email_norm)
                         else:
                             for cand in ('e_mail',):
                                 if hasattr(new_user, cand):
-                                    setattr(new_user, cand, email)
+                                    setattr(new_user, cand, email_norm)
                                     break
 
                         # set password in the correct column
@@ -289,21 +285,26 @@ def register_page():
 
                         db.add(new_user)
                         db.commit()
-                        # refresh to get id
                         db.refresh(new_user)
 
-                        client = get_client_info()
-                        add_log(db,
-                                user_type="user",
-                                user_id=getattr(new_user, 'id', None),
-                                username=username,
-                                email=email,
-                                login_status="registered",
-                                ip_address=client["ip"],
-                                user_agent=client["user_agent"]
-                                )
-                        st.success(f"Registration successful! Welcome {username}. You can now log in.")
-                        st.session_state.page = "login"
+                        # Optional integrity check
+                        stored = get_user_password_value(new_user) or ""
+                        if not (isinstance(stored, str) and stored.startswith("$2") and 50 <= len(stored) <= 255):
+                            db.rollback()
+                            st.error("Registration failed: stored password hash has unexpected format")
+                        else:
+                            client = get_client_info()
+                            add_log(db,
+                                    user_type="user",
+                                    user_id=getattr(new_user, 'id', None),
+                                    username=username,
+                                    email=email_norm,
+                                    login_status="registered",
+                                    ip_address=client["ip"],
+                                    user_agent=client["user_agent"]
+                                    )
+                            st.success(f"Registration successful! Welcome {username}. You can now log in.")
+                            st.session_state.page = "login"
                 except Exception as e:
                     db.rollback()
                     st.error(f"Registration failed: {e}")
@@ -312,6 +313,7 @@ def register_page():
 
     if st.button("Back to Home"):
         st.session_state.page = "home"
+
 
 def login_page():
     st.header("Login")
