@@ -172,7 +172,7 @@ def sidebar_nav():
     st.sidebar.markdown("---")
     if DB_OK:
         st.sidebar.success("DB: connected")
-       
+    
     else:
         st.sidebar.error("DB: connection failed")
         st.sidebar.caption(DB_ERROR)
