@@ -32,26 +32,7 @@ with st.sidebar:
     st.caption(f"📅 Last Login: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     
     st.markdown("---")
-    st.subheader("🔗 Services")
     
-    # List of services
-    services = {
-        "📊 Visualization": "Current Service",
-        "📈 Forecasting": "Forecast Service",
-        "🔍 Data Analysis": "Analysis Service",
-        "⚙️ Settings": "User Settings",
-        "📚 Documentation": "Help & Docs",
-        "🚪 Logout": "Sign Out"
-    }
-    
-    for service_icon, service_name in services.items():
-        if st.button(service_icon, key=service_icon, use_container_width=True):
-            if "Logout" in service_icon:
-                st.warning("Logged out successfully!")
-            else:
-                st.info(f"Navigating to {service_name}...")
-    
-    st.markdown("---")
     st.markdown(
         """
         <div style='text-align: center; font-size: 0.8em; color: #666;'>
