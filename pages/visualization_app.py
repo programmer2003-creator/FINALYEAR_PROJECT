@@ -13,50 +13,14 @@ st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allo
 
 # Sidebar - User Details and Services
 with st.sidebar:
+   
     st.markdown("---")
-    st.subheader("👤 User Details")
     
-    # User information
-    user_name = "Admin User"
-    user_email = "admin@example.com"
-    user_role = "Analyst"
-    
-    col1, col2 = st.columns([1, 3])
-    with col1:
-        st.markdown("👤")
-    with col2:
-        st.markdown(f"**{user_name}**")
-    
-    st.caption(f"📧 {user_email}")
-    st.caption(f"🔖 Role: {user_role}")
-    st.caption(f"📅 Last Login: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-    
-    st.markdown("---")
-    st.subheader("🔗 Services")
-    
-    # List of services
-    services = {
-        "📊 Visualization": "Current Service",
-        "📈 Forecasting": "Forecast Service",
-        "🔍 Data Analysis": "Analysis Service",
-        "⚙️ Settings": "User Settings",
-        "📚 Documentation": "Help & Docs",
-        "🚪 Logout": "Sign Out"
-    }
-    
-    for service_icon, service_name in services.items():
-        if st.button(service_icon, key=service_icon, use_container_width=True):
-            if "Logout" in service_icon:
-                st.warning("Logged out successfully!")
-            else:
-                st.info(f"Navigating to {service_name}...")
-    
-    st.markdown("---")
     st.markdown(
         """
         <div style='text-align: center; font-size: 0.8em; color: #666;'>
         <p>Dashboard v1.0</p>
-        <p>© 2024 Energy Analytics</p>
+        <p>© 2026 | Petroleum Price Forecasting System</p>
         </div>
         """,
         unsafe_allow_html=True

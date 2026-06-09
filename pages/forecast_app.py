@@ -47,6 +47,19 @@ model, metadata = load_model()
 # Sidebar for user input
 st.sidebar.header("Forecasting Parameters")
 forecast_months = st.sidebar.slider("Forecast period (months)", 1, 12, 6)
+with st.sidebar:
+   
+    st.markdown("---")
+    
+    st.markdown(
+        """
+        <div style='text-align: center; font-size: 0.8em; color: #666;'>
+        <p>Dashboard v1.0</p>
+        <p>© 2026 | Petroleum Price Forecasting System</p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 # Make forecast
 future_dates = model.make_future_dataframe(periods=forecast_months, freq='MS')

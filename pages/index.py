@@ -156,12 +156,7 @@ if "username" not in st.session_state:
 # ---------- Sidebar ----------
 def sidebar_nav():
     st.sidebar.title("Navigation")
-    st.sidebar.markdown("**Pages**")
     pages = [
-        ("Home", "home"),
-        ("User Dashboard", "user_dashboard"),
-        ("Visualization App", "visualization_app"),
-        ("Forecast App", "forecast_app"),
         ("Register", "register"),
         ("Login", "login"),
     ]
@@ -377,42 +372,6 @@ def login_page():
     if st.button("Back to Home"):
         st.session_state.page = "home"
 
-def user_dashboard_page():
-    if not st.session_state.user_id:
-        st.warning("Please log in first")
-        st.session_state.page = "login"
-        return
-
-    st.header("User Dashboard")
-    st.write(f"Hello, **{st.session_state.username}**")
-    st.markdown("This is the user dashboard. Replace with your real dashboard UI.")
-    if st.button("Logout"):
-        if DB_OK:
-            db = SessionLocal()
-            try:
-                add_log(db,
-                        user_type="user",
-                        user_id=st.session_state.user_id,
-                        username=st.session_state.username,
-                        login_status="logout",
-                        ip_address=get_client_info()["ip"],
-                        user_agent=get_client_info()["user_agent"],
-                        logout_time=datetime.utcnow()
-                        )
-            finally:
-                db.close()
-        st.session_state.user_id = None
-        st.session_state.username = None
-        st.success("You have been logged out")
-        st.session_state.page = "home"
-
-def visualization_app_page():
-    st.header("Visualization App")
-    st.write("Placeholder for visualization_app.py. Add charts and interactive controls here.")
-
-def forecast_app_page():
-    st.header("Forecast App")
-    st.write("Placeholder for forecast_app.py. Add forecasting UI and model controls here.")
 
 # ---------- Router ----------
 def router():
@@ -424,12 +383,6 @@ def router():
         register_page()
     elif page == "login":
         login_page()
-    elif page == "user_dashboard":
-        user_dashboard_page()
-    elif page == "visualization_app":
-        visualization_app_page()
-    elif page == "forecast_app":
-        forecast_app_page()
     else:
         st.session_state.page = "home"
         home_page()
