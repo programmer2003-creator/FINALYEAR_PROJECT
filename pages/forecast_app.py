@@ -65,6 +65,11 @@ with st.sidebar:
 future_dates = model.make_future_dataframe(periods=forecast_months, freq='MS')
 forecast = model.predict(future_dates)
 
+# share data with the analysis page
+st.session_state['forecast_df'] = forecast
+st.session_state['metadata'] = metadata
+st.session_state['forecast_months'] = forecast_months
+
 # Display metrics
 col1, col2, col3 = st.columns(3)
 with col1:
