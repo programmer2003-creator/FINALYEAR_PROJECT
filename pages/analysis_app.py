@@ -1,6 +1,7 @@
 """
 pages/analysis_app.py - Sub-page that shares the forecast data directly
 from the main application state and renders a highly visual layout using clean parsing.
+Secured with authentication guards mapped from index.py routing state.
 """
 import streamlit as st
 import pandas as pd
@@ -18,8 +19,17 @@ from google.genai import types
 # ----------------------------------------------------
 GEMINI_API_KEY = "AQ.Ab8RN6Kwf394VK9wm5L5_ZnI3RS4TqtBpaW6JWU5ATsK9tMmVQ"
 
+# --- MUST BE THE VERY FIRST STREAMLIT COMMAND ---
 st.set_page_config(page_title="Sales Analysis", layout="wide")
-st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
+
+# --- SECURITY & AUTHENTICATION GUARD CLAUSE ---
+# Ensures an unauthorized user cannot bypass index.py entry criteria
+if "user_id" not in st.session_state or st.session_state.user_id is None:
+    left_margin, center_content, right_margin = st.columns([0.2, 3.6, 0.2])
+    with center_content:
+        st.error("🛑 Security Access Denied. Please sign in via the portal to access live analysis briefs.")
+        st.page_link("pages/index.py", label="⬅️ Back to Home Screen", use_container_width=True)
+    st.stop()
 
 st.title("⛽ Petrol Price Analysis & Operations Assistant")
 

@@ -1,5 +1,6 @@
 """
 Streamlit app to load the saved Prophet model and make predictions
+Secured with authentication guards mapped from index.py routing state.
 """
 import streamlit as st
 import pandas as pd
@@ -9,8 +10,17 @@ from datetime import datetime, timedelta
 import plotly.graph_objects as go
 from prophet import Prophet
 
+# --- MUST BE THE VERY FIRST STREAMLIT COMMAND ---
 st.set_page_config(page_title="Sales Forecasting", layout="wide")
-st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
+
+# --- SECURITY & AUTHENTICATION GUARD CLAUSE ---
+# Ensures an unauthorized user cannot bypass index.py entry criteria
+if "user_id" not in st.session_state or st.session_state.user_id is None:
+    left_margin, center_content, right_margin = st.columns([0.2, 3.6, 0.2])
+    with center_content:
+        st.error("🛑 Security Access Denied. Please sign in via the portal to access model projection features.")
+        st.page_link("pages/index.py", label="⬅️ Back to Home Screen", use_container_width=True)
+    st.stop()
 
 st.title("Petroleum Price Forecasting Dashboard")
 
@@ -45,10 +55,26 @@ def load_model():
 model, metadata = load_model()
 
 # Sidebar for user input
+st.sidebar.subheader("👤 User Session Profile")
+st.sidebar.write(f"**Operator:** {st.session_state.get('username', 'Unknown')}")
+st.sidebar.write(f"**Role:** {st.session_state.get('position', 'Not Specified')}")
+st.sidebar.write(f"**Enterprise:** {st.session_state.get('company_name', 'Not Specified')}")
+st.sidebar.caption(f"Last login: {st.session_state.get('last_login', 'N/A')}")
+
+st.sidebar.markdown("---")
 st.sidebar.header("Forecasting Parameters")
 forecast_months = st.sidebar.slider("Forecast period (months)", 1, 12, 6)
+
 with st.sidebar:
-   
+    st.markdown("---")
+    
+    # Navigation Fallback Link back to user management dashboard 
+    if st.button("⚙️ Manage User Profile Account", use_container_width=True):
+        try:
+            st.switch_page("user_dashboard.py")
+        except Exception:
+            st.switch_page("pages/user_dashboard.py")
+            
     st.markdown("---")
     
     st.markdown(
