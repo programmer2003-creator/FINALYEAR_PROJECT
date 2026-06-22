@@ -10,7 +10,6 @@ pages = [
     st.Page('pages/visualization_app.py', title='Visualization', icon='📊'),
     st.Page('pages/forecast_app.py', title='Forecasting', icon='📈'),
     st.Page('pages/analysis_app.py', title='Analysis', icon='🔍'),
-    st.Page('pages/logout.py', title='Logout', icon='🚪'),
 
 ]
 
