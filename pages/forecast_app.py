@@ -55,11 +55,6 @@ def load_model():
 model, metadata = load_model()
 
 # Sidebar for user input
-st.sidebar.subheader("👤 User Session Profile")
-st.sidebar.write(f"**Operator:** {st.session_state.get('username', 'Unknown')}")
-st.sidebar.write(f"**Role:** {st.session_state.get('position', 'Not Specified')}")
-st.sidebar.write(f"**Enterprise:** {st.session_state.get('company_name', 'Not Specified')}")
-st.sidebar.caption(f"Last login: {st.session_state.get('last_login', 'N/A')}")
 
 st.sidebar.markdown("---")
 st.sidebar.header("Forecasting Parameters")
@@ -68,14 +63,6 @@ forecast_months = st.sidebar.slider("Forecast period (months)", 1, 12, 6)
 with st.sidebar:
     st.markdown("---")
     
-    # Navigation Fallback Link back to user management dashboard 
-    if st.button("⚙️ Manage User Profile Account", use_container_width=True):
-        try:
-            st.switch_page("user_dashboard.py")
-        except Exception:
-            st.switch_page("pages/user_dashboard.py")
-            
-    st.markdown("---")
     
     st.markdown(
         """

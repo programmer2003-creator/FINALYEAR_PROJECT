@@ -177,16 +177,16 @@ def home_page():
     left_margin, center_content, right_margin = st.columns([0.2, 3.6, 0.2])
     
     with center_content:
-        st.title("⛽ Petroleum Price Forecasting System")
+        st.title(" Petroleum Price Forecasting System")
         st.markdown("Welcome to the analytical portal. Please sign in or register below to access interactive projection modules.")
         
         btn_col1, btn_col2 = st.columns(2)
         with btn_col1:
-            if st.button("🔑 Login Portal", use_container_width=True):
+            if st.button(" Login Portal", use_container_width=True):
                 st.session_state.page = "login"
                 st.rerun()
         with btn_col2:
-            if st.button("📝 Register Account", use_container_width=True):
+            if st.button(" Register Account", use_container_width=True):
                 st.session_state.page = "register"
                 st.rerun()
                 
@@ -198,7 +198,7 @@ def home_page():
 def register_page():
     left_margin, center_content, right_margin = st.columns([0.2, 3.6, 0.2])
     with center_content:
-        st.header("📝 Create System Account")
+        st.header(" Create System Account")
         if not DB_OK:
             st.error("Database connection is not available. Registration is disabled.")
             if st.button("Back to Home", use_container_width=True):
@@ -324,7 +324,7 @@ def register_page():
 def login_page():
     left_margin, center_content, right_margin = st.columns([0.2, 3.6, 0.2])
     with center_content:
-        st.header("🔑 Account Sign In")
+        st.header(" Account Sign In")
         if not DB_OK:
             st.error("Database connection is not available. Login is disabled.")
             if st.button("Back to Home", use_container_width=True):

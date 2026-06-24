@@ -27,15 +27,6 @@ with st.sidebar:
    
     st.markdown("---")
     
-    # Structural Multi-page Navigation Link back to management dashboard 
-    # (Update path string to "pages/user_dashboard.py" if placed in a nested pages folder structure)
-    if st.button("⚙️ Manage User Profile Account", use_container_width=True):
-        try:
-            st.switch_page("user_dashboard.py")
-        except Exception:
-            st.switch_page("pages/user_dashboard.py")
-            
-    st.markdown("---")
     
     st.markdown(
         """

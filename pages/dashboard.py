@@ -9,6 +9,22 @@ from sqlalchemy.orm import Session
 # --- Page Initialization ---
 st.set_page_config(page_title="User Account Dashboard", layout="wide", page_icon="📊")
 
+# Sidebar - User Details and Services
+with st.sidebar:
+   
+    st.markdown("---")
+    
+    
+    st.markdown(
+        """
+        <div style='text-align: center; font-size: 0.8em; color: #666;'>
+        <p>Dashboard v1.0</p>
+        <p>© 2026 | Petroleum Price Forecasting System</p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
 # --- Security & Session Guard Clause ---
 if "user_id" not in st.session_state or st.session_state.user_id is None:
     left_margin, center_content, right_margin = st.columns([0.2, 3.6, 0.2])
@@ -57,12 +73,12 @@ left_margin, center_content, right_margin = st.columns([0.2, 3.6, 0.2])
 
 with center_content:
     # --- Dashboard Title Bar ---
-    st.title("📊 User Performance Dashboard")
+    st.title(" User Performance Dashboard")
     st.markdown("Manage operational permissions, enterprise identifiers, and localized system credentials.")
     st.divider()
 
     # --- Metrics Section (KPI Cards Visualizer) ---
-    st.markdown("### 📈 Core Account Telemetry")
+    st.markdown("### Account Details")
     kpi1, kpi2, kpi3 = st.columns(3)
     with kpi1:
         st.metric(label="Registered Identity", value=st.session_state.username)
@@ -97,7 +113,7 @@ with center_content:
                 st.write(f"**System Log Timestamp:** :green[{st.session_state.last_login}]")
                 
         st.markdown("<br>", unsafe_allow_html=True)
-        st.info("💡 **Operational Security Directive:** If any system parameter identifiers drift from target enterprise contexts, apply edits directly under the management panel tab window.")
+        st.info("")
 
     # TAB 2: Edit Form Processing Module
     with tab_edit_profile:
@@ -116,7 +132,7 @@ with center_content:
                 index=0 if st.session_state.company_type == "fuel stations operator" else 1
             )
             
-            submit_profile_changes = st.form_submit_button("💾 Commit Profile Synchronization Changes", use_container_width=True)
+            submit_profile_changes = st.form_submit_button(" Comfirm Profile Changes", use_container_width=True)
             
             if submit_profile_changes:
                 # Basic context constraints validations
@@ -152,4 +168,4 @@ with center_content:
 
     # Footer Caption Module
     st.divider()
-    st.caption("© 2026 | Petroleum Price Predictive Analytics Platform Engine Cluster Node")
+   

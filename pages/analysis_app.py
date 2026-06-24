@@ -31,7 +31,23 @@ if "user_id" not in st.session_state or st.session_state.user_id is None:
         st.page_link("pages/index.py", label="⬅️ Back to Home Screen", use_container_width=True)
     st.stop()
 
-st.title("⛽ Petrol Price Analysis & Operations Assistant")
+# Sidebar - User Details and Services
+with st.sidebar:
+   
+    st.markdown("---")
+    
+    
+    st.markdown(
+        """
+        <div style='text-align: center; font-size: 0.8em; color: #666;'>
+        <p>Dashboard v1.0</p>
+        <p>© 2026 | Petroleum Price Forecasting System</p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+st.title(" Petrol Price Analysis & Operations Assistant")
 
 # Verify if data exists in the shared session state
 if 'forecast_df' not in st.session_state:
@@ -73,7 +89,7 @@ with col3:
 st.divider()
 
 # Plot 1: Visualizing forecasted results into a Bar Graph
-st.subheader("📊 Forecasted Petrol Price Breakdown")
+st.subheader(" Forecasted Petrol Price Breakdown")
 fig = go.Figure()
 
 fig.add_trace(go.Bar(
@@ -104,7 +120,7 @@ st.plotly_chart(fig, use_container_width=True)
 st.divider()
 
 # Gemini AI Advisory Section
-st.subheader("🤖 Live Market Comparison & Operator Insights")
+st.subheader(" Live Market Comparison & Operator Insights")
 
 if GEMINI_API_KEY == "YOUR_GEMINI_API_KEY_HERE" or not GEMINI_API_KEY:
     st.warning("⚠️ Please open the code file and replace `'YOUR_GEMINI_API_KEY_HERE'` with your actual Gemini API key.")
@@ -179,7 +195,7 @@ else:
                         time.sleep(retry_delay)
                         retry_delay *= 2 
                     else:
-                        st.error(f"An error occurred while communicating with Gemini AI: {e}")
+                        st.error(f"An error occurred while communicating with your Assistant, Check your connection and try again!: {e}")
                         break
             
             # --- VISUAL RENDERING PIPELINE ---
@@ -190,7 +206,7 @@ else:
                     var_direction = response_json.get("variance_direction", "HIGHER")
                     eff_date = response_json.get("effective_date", "N/A")
                     
-                    st.markdown("### 📋 Real-World Cap Analysis vs. Model Projections")
+                    st.markdown("### Real-World Cap Analysis vs. Model Projections")
                     
                     # Row 1: Dashboard Cards
                     card_col1, card_col2, card_col3 = st.columns([2, 1.5, 2])
@@ -226,14 +242,14 @@ else:
                     with card_col3:
                         st.markdown(f"""
                         <div style="background-color: #f9f9f9; border-left: 5px solid #777; padding: 20px; border-radius: 8px;">
-                            <span style="color: #555; font-weight: bold; font-size: 1.1em;">📈 FORECASTED MODEL</span>
+                            <span style="color: #555; font-weight: bold; font-size: 1.1em;"> FORECASTED MODEL</span>
                             <h2 style="margin: 5px 0; color: #333;">TZS {predicted_price:,.2f}</h2>
                             <p style="margin: 0; font-size: 0.85em; color: #555;"><br><b>Target Month:</b> {current_month_str}</p>
                         </div>
                         """, unsafe_allow_html=True)
                         
                     st.write("")
-                    st.markdown("### 🔍 Key Market Fluctuation Drivers")
+                    st.markdown("### Key Market Fluctuation Drivers")
                     
                     # Row 2: Driver Sub-cards
                     drivers = response_json.get("drivers", [])
@@ -243,13 +259,13 @@ else:
                             with d_cols[idx]:
                                 st.markdown(f"""
                                 <div style="background-color: #ffffff; box-shadow: 0px 2px 5px rgba(0,0,0,0.05); border: 1px solid #eef0f2; padding: 15px; border-radius: 8px; min-height: 140px;">
-                                    <h5 style="margin: 0 0 8px 0; color: #e67e22;">💡 {driver.get('title')}</h5>
+                                    <h5 style="margin: 0 0 8px 0; color: #e67e22;"> {driver.get('title')}</h5>
                                     <p style="margin: 0; font-size: 0.88em; color: #555; line-height: 1.4;">{driver.get('short_desc')}</p>
                                 </div>
                                 """, unsafe_allow_html=True)
                                 
                     st.write("")
-                    st.markdown("### ✅ Professional Operational Strategy")
+                    st.markdown("### Professional Operational Strategy")
                     
                     # Row 3: Actionable Cards
                     strategies = response_json.get("strategies", [])
@@ -260,7 +276,7 @@ else:
                                 bullet_points = "".join([f"<li style='margin-bottom:4px;'>{pt}</li>" for pt in strat.get('points', [])])
                                 st.markdown(f"""
                                 <div style="background-color: #fff; border-top: 4px solid #2ecc71; box-shadow: 0px 2px 6px rgba(0,0,0,0.04); padding: 15px; border-radius: 4px; min-height: 180px;">
-                                    <strong style="color: #333; font-size: 1em;">🛠️ {strat.get('title')}</strong>
+                                    <strong style="color: #333; font-size: 1em;"> {strat.get('title')}</strong>
                                     <ul style="margin: 10px 0 0 0; padding-left: 20px; font-size: 0.88em; color: #444;">
                                         {bullet_points}
                                     </ul>
