@@ -1,5 +1,6 @@
 """
 Streamlit app to load the saved Prophet model and make predictions
+Secured with authentication guards mapped from index.py routing state.
 """
 import streamlit as st
 import pandas as pd
@@ -9,8 +10,17 @@ from datetime import datetime, timedelta
 import plotly.graph_objects as go
 from prophet import Prophet
 
+# --- MUST BE THE VERY FIRST STREAMLIT COMMAND ---
 st.set_page_config(page_title="Sales Forecasting", layout="wide")
-st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
+
+# --- SECURITY & AUTHENTICATION GUARD CLAUSE ---
+# Ensures an unauthorized user cannot bypass index.py entry criteria
+if "user_id" not in st.session_state or st.session_state.user_id is None:
+    left_margin, center_content, right_margin = st.columns([0.2, 3.6, 0.2])
+    with center_content:
+        st.error("🛑 Security Access Denied. Please sign in via the portal to access model projection features.")
+        st.page_link("pages/index.py", label="⬅️ Back to Home Screen", use_container_width=True)
+    st.stop()
 
 st.title("Petroleum Price Forecasting Dashboard")
 
@@ -45,11 +55,14 @@ def load_model():
 model, metadata = load_model()
 
 # Sidebar for user input
+
+st.sidebar.markdown("---")
 st.sidebar.header("Forecasting Parameters")
 forecast_months = st.sidebar.slider("Forecast period (months)", 1, 12, 6)
+
 with st.sidebar:
-   
     st.markdown("---")
+    
     
     st.markdown(
         """
@@ -64,6 +77,11 @@ with st.sidebar:
 # Make forecast
 future_dates = model.make_future_dataframe(periods=forecast_months, freq='MS')
 forecast = model.predict(future_dates)
+
+# share data with the analysis page
+st.session_state['forecast_df'] = forecast
+st.session_state['metadata'] = metadata
+st.session_state['forecast_months'] = forecast_months
 
 # Display metrics
 col1, col2, col3 = st.columns(3)
