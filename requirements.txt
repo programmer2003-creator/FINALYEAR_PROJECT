@@ -1,49 +1,25 @@
-import streamlit as st
-import pandas as pd
-import json
-import os
-import re
-from datetime import datetime
-import plotly.graph_objects as go
-# Official modern SDK: pip install google-genai
-from google import genai
-from google.genai import types
-import streamlit as st
-from datetime import datetime
-import pandas as pd
-import re
-from sqlalchemy.orm import Session
-import streamlit as st
-import pandas as pd
-import json
-import os
-from datetime import datetime, timedelta
-import plotly.graph_objects as go
-from prophet import Prophet
-import streamlit as st
-from sqlalchemy import create_engine, MetaData, Table
-from sqlalchemy.orm import sessionmaker, registry
-from datetime import datetime
-import re
-import bcrypt
-import os
-import streamlit as st
-import pandas as pd
-import numpy as np
-import plotly.graph_objects as go
-import plotly.express as px
-from datetime import datetime
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-import prophet
-from prophet import Prophet
-from sklearn.metrics import mean_absolute_error, mean_squared_error
-from sklearn.model_selection import train_test_split
-import warnings
-warnings.filterwarnings("ignore")
-import psycopg2
-from psycopg2 import sql, Error
-import sys
-from datetime import datetime
+# Web Application Framework
+streamlit
+
+# Data Analysis & Manipulation
+pandas
+numpy
+
+# Database Connectors & ORM
+sqlalchemy
+psycopg2-binary
+
+# Machine Learning & Forecasting
+prophet
+scikit-learn
+
+# Data Visualization
+plotly
+matplotlib
+seaborn
+
+# Generative AI modern SDK
+google-genai
+
+# Security & Utilities
+bcrypt
