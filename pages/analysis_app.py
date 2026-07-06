@@ -247,7 +247,80 @@ else:
                             <p style="margin: 0; font-size: 0.85em; color: #555;"><br><b>Target Month:</b> {current_month_str}</p>
                         </div>
                         """, unsafe_allow_html=True)
+                    st.divider()
+                    
+                  # ----------------------------------------------------
+                    # FIXED: TRIP COST & LIVE FUEL CALCULATOR (USING A STREAMLIT FORM)
+                    # ----------------------------------------------------
+                    st.write("")
+                    st.markdown("### ⛽ Trip Fuel & Real-Time Cost Calculator")
+                    
+                    if ewura_val <= 0:
+                        st.info("💡 Unable to run calculations. Live EWURA price target returned an invalid or zero value.")
+                    else:
+                        st.markdown(
+                            f"Estimate expenses using the current live EWURA cap retail price of **TZS {ewura_val:,.2f} per liter** (Dar es Salaam port metric)."
+                        )
                         
+                        # Create a dedicated form container
+                        with st.form(key="logistics_calculator_form"):
+                            
+                            calc_col1, calc_col2 = st.columns(2)
+                            with calc_col1:
+                                distance_km = st.number_input(
+                                    "Enter Total Distance (km):",
+                                    min_value=0.0,
+                                    value=100.0,
+                                    step=10.0,
+                                    key="calc_distance_input"
+                                )
+                            with calc_col2:
+                                fuel_efficiency = st.number_input(
+                                    "Vehicle Fuel Efficiency (km / Liter):",
+                                    min_value=0.1,
+                                    value=12.0,
+                                    step=0.5,
+                                    key="calc_efficiency_input"
+                                )
+                            
+                            st.write("")
+                            
+                            # Center layout columns for the submit button
+                            left_spacer, center_btn_col, right_spacer = st.columns([1.5, 1, 1.5])
+                            with center_btn_col:
+                                # Forms require a st.form_submit_button instead of st.button
+                                submit_btn = st.form_submit_button(
+                                    "Calculate", 
+                                    type="primary", 
+                                    use_container_width=True
+                                )
+                        
+                        # Render results OUTSIDE the form block so they don't reset instantly
+                        if submit_btn:
+                            liters_needed = distance_km / fuel_efficiency
+                            total_real_cost = liters_needed * ewura_val
+                            
+                            st.write("")
+                            res_col1, res_col2 = st.columns(2)
+                            with res_col1:
+                                st.markdown(f"""
+                                <div style="background-color: #fcf8e3; border-left: 5px solid #f0ad4e; padding: 15px; border-radius: 6px;">
+                                    <span style="color: #f0ad4e; font-weight: bold; font-size: 0.9em;">REQUIRED PETROLEUM</span>
+                                    <h3 style="margin: 5px 0; color: #333;">{liters_needed:,.2f} Liters</h3>
+                                </div>
+                                """, unsafe_allow_html=True)
+                                
+                            with res_col2:
+                                st.markdown(f"""
+                                <div style="background-color: #dff0d8; border-left: 5px solid #5cb85c; padding: 15px; border-radius: 6px;">
+                                    <span style="color: #5cb85c; font-weight: bold; font-size: 0.9em;">ESTIMATED REAL COST</span>
+                                    <h3 style="margin: 5px 0; color: #333;">TZS {total_real_cost:,.2f}</h3>
+                                </div>
+                                """, unsafe_allow_html=True)
+                    
+                    st.divider()
+                    # ----------------------------------------------------
+                    
                     st.write("")
                     st.markdown("### Key Market Fluctuation Drivers")
                     
@@ -263,6 +336,7 @@ else:
                                     <p style="margin: 0; font-size: 0.88em; color: #555; line-height: 1.4;">{driver.get('short_desc')}</p>
                                 </div>
                                 """, unsafe_allow_html=True)
+                    st.divider()
                                 
                     st.write("")
                     st.markdown("### Professional Operational Strategy")
@@ -282,7 +356,7 @@ else:
                                     </ul>
                                 </div>
                                 """, unsafe_allow_html=True)
-                                
+                    st.divider()            
                 except Exception as parse_err:
                     st.error(f"Visualization formatting error: {parse_err}")
                     st.text(api_call.text)
