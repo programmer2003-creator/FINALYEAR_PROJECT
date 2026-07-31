@@ -12,15 +12,6 @@ from datetime import datetime
 # --- MUST BE THE VERY FIRST STREAMLIT COMMAND ---
 st.set_page_config(page_title="Data Visualization Dashboard", layout="wide")
 
-# --- SECURITY & AUTHENTICATION GUARD CLAUSE ---
-# Ensures an unauthorized user cannot bypass index.py entry criteria
-if "user_id" not in st.session_state or st.session_state.user_id is None:
-    left_margin, center_content, right_margin = st.columns([0.2, 3.6, 0.2])
-    with center_content:
-        st.error("🛑 Security Access Denied. Please sign in via the portal to view data analytics metrics.")
-        # Fixed routing fallback button to safely return back to index.py
-        st.page_link("pages/index.py", label="⬅️ Back to Home Screen", use_container_width=True)
-    st.stop()
     
 # Sidebar - User Details and Services
 with st.sidebar:
